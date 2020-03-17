@@ -1,0 +1,148 @@
+<!-- plz dont kill me-->
+<!-- i just a sadboy-->
+
+<!-- dont steal my script IDIOTS !!! -->
+<!-- 01100100 01101111 01101110 01110100 00100000 01100110 01101111 01110010 01100111 01100101 01110100 00100000 01101101 01111001 00100000 01101110 01100001 01101101 01100101 00100000 01100010 01100101 01100011 01100001 01110101 01110011 01100101 00100000 01101001 00100000 01110111 01101001 01101100 01101100 00100000 01100011 01101111 01101101 01100101 01100010 01100001 01100011 01101011 00100000 01101100 01100001 01110100 01100101 01110010 00100000 00111010 00101001 00100000 00101100 00100000 01110000 01101111 01101111 01110010 00100000 01110011 01111001 01110011 01110100 01100101 01101101 00100000 00101100 00100000 01110000 01101111 01101111 01110010 00100000 01110011 01100101 01100011 01110101 01110010 01101001 01110100 01111001 00100000 00101100 00100000 01101000 01100001 01101000 01100001 00100000 01111001 01101111 01110101 00100000 01101110 01100101 01100101 01100100 00100000 01101100 01100101 01100001 01110010 01101110 00100000 01101101 01101111 01110010 01100101 00100000 01100001 01100010 01101111 01110101 01110100 00100000 01101000 01101111 01110111 00100000 01110100 01101111 00100000 01101101 01100001 01101011 01100101 00100000 01110111 01100101 01100010 01110011 01101001 01110100 01100101 00100000 00111010 00101001 00100000 01111110 01000010 01100001 01101110 01100111 00110100 01011001 00110001 01001110 -->
+<htm>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="og:title" content="./Bang4Y1N">
+<meta name="description" content="Your site has been hacked , its because your system security was too low">
+<meta property="og:description" content="Thank you for all member of Sabang Merauke Cyber 45">
+<meta property="og:url" content="./">
+<meta property="og:site_name" content="./Bang4Y1N">
+<meta property="og:type" content="website">
+<meta name="copyright"content="Hacking">
+<meta name="theme-color" content="#000">
+<meta name="keywords" content="BIG FAMILY, BANG4Y1N , SMC 45, Defaced, Hacked, Breached, Fuckers, Shit Security,"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <meta content='./Bang4Y1N' property='og:title'/>
+        <meta content='article' property='og:type'/>
+<script type="text/javascript">
+
+var snowmax=35
+var snowcolor=new Array("#AAAACC","#DDDDFF","#CCCCDD","#F3F3F3","#F0FFFF")
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+var snowletter="*"
+var sinkspeed=0.6
+var snowmaxsize=22
+var snowminsize=8
+var snowingzone=1
+
+// Do not edit below this line
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent 
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)  
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {		
+	rand=Math.floor(range*Math.random())
+    return rand
+}
+
+function initsnow() {
+	if (ie5 || opera) {
+		marginbottom = document.body.clientHeight
+		marginright = document.body.clientWidth
+	}
+	else if (ns6) {
+		marginbottom = window.innerHeight
+		marginright = window.innerWidth
+	}
+	var snowsizerange=snowmaxsize-snowminsize
+	for (i=0;i<=snowmax;i++) {
+		crds[i] = 0;                      
+    	lftrght[i] = Math.random()*15;         
+    	x_mv[i] = 0.03 + Math.random()/10;
+		snow[i]=document.getElementById("s"+i)
+		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+		snow[i].size=randommaker(snowsizerange)+snowminsize
+		snow[i].style.fontSize=snow[i].size
+		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+		snow[i].sink=sinkspeed*snow[i].size/5
+		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+		snow[i].style.left=snow[i].posx
+		snow[i].style.top=snow[i].posy
+	}
+	movesnow()
+}
+
+function movesnow() {
+	for (i=0;i<=snowmax;i++) {
+		crds[i] += x_mv[i];
+		snow[i].posy+=snow[i].sink
+		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
+		snow[i].style.top=snow[i].posy
+		
+		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+			snow[i].posy=0
+		}
+	}
+	var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+	window.onload=initsnow
+}
+</script>
+<head>
+<style>img[alt="www.000webhost.com"]{display:none;}</style>
+<iframe scrolling="no" allow="autoplay" src="https://c.top4top.io/m_1494tsexk1.mp3" width="0" height="0" frameborder="no"></iframe>
+ 
+<link rel="shortcut icon" type="image/x-icon" href="http://getdrawings.com/free-icon-bw/anonymous-icon-png-8.png" />
+<title>± Bang4Y1N ±</title>
+</style>
+<style type='text/css'>
+HTML,BODY{cursor: none;}
+</style>
+
+<center><body background="https://images.hdqwalls.com/download/rooftop-scifi-anonymus-hoodie-guy-4k-yu-1366x768.jpg" height="4000" width="4000"><center>
+<style>
+    h1 {
+    text-align: center;
+    color: #3335cf;
+    font-size: 35px;
+    font-family: Arial Narrow, sans-serif;
+    font-style: garamond;
+    text-shadow: 100vmax #f00505;>
+    text-shadow: 0px 0px 0px #f00505;>
+
+    
+    </style>
+    <center>
+<br><br>
+<img src="https://g.top4top.io/p_1470n3hyd1.png" height="220" width="220">
+</center>
+<center><font color=red size=3 face=courier new>Indon<font color=white>esian People</font></center>
+<center><font color=#c6c5c4 size=2 face=courier new>[ <font color=#a3a2a1>bang4y1n@protonmail.com<font color=#c6c5c4> ]</font></center>
+<br>
+<center><font color=red size=4 face=courier new>im sorry admin <font color=white>for your websites</font><center><font color=red size=4 face=courier new>i do this because <font color=white>this is my hobbies</font><center><font color=red size=4 face=courier new>please patch yo<font color=white>ur system for soon</font><center><font color=red size=4 face=courier new>hacking is not a<font color=white> crime its an art</font><center><font color=red size=4 face=courier new>Bang<font color=white>4Y1N</font><br><br><font size=1 color=#2E8B57>if your file got encrypt you can contact me :)</font><center></font><br><br><font size=2 color=white>Thanks to my team and all member of<br><center><a href="https://defacer.id/archive/team/sabang-merauke-cyber-45">Sabang Merauke Cyber 45</a><center>
+<script>alert (' Your security has been destroyed :) ')</script><br><br>
+<audio controls>
+	<source src="https://c.top4top.io/m_1494tsexk1.mp3" type="audio/mp3">
+	</audio><br><br><br>
+<font size=1 color=gray>Kalian kagum dan bertanya – tanya. Siapa Aku Sebenarnya.<br>Inilah Aku. Orang yang pernah kalian hina dimasa lalu.</center>
